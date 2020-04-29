@@ -36,8 +36,14 @@ Exercises outlined in the `index.js` file walk you through a series of steps for
 M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
 Save the final value into a variable called monthlyRate. */
+let principal = 200000;
+let interestRate = 0.05;
+let years = 30;
+let name = "Debra Douglass";
+monthlyInterestRate = interestRate / 12;
+let periods = years * 12
 
-monthlyPmtAmt = principal [ monthlyInterestRate ( 1 + monthlyInterestRate )^periods ] / [ ( 1 + monthlyInterestRate )^periods – 1 ]
+monthlyRate = principal [ monthlyInterestRate ( 1 + monthlyInterestRate )^periods ] / [ ( 1 + monthlyInterestRate )^periods – 1 ]
 
 /* Hint: while these calculations can be done in one line, it might be helpful to create 
 a variable called "numerator" to calculate the numerator, and another called "denominator" to calculate the denominator 
@@ -45,10 +51,18 @@ a variable called "numerator" to calculate the numerator, and another called "de
 Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64 */
 
-let numerator = math.pow((1 + interestRate, N)
-let denominator = ?
+let numerator = monthlyInterestRate (math.pow(1 + monthlyInterestRate), periods)
+let denominator = (math.pow(1 + monthlyInterestRate, periods) - 1)
+
+// totalPayments should be the total number of payments expected to be made for the life of the loan: years * 12
+// interestRate: eg. 6.2% should be passed as 0.062
 
 
+
+function monthlyRate(principal, periods, monthlyInterestRate) {
+    
+    return principal * (numerator / denominator);
+}
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 
