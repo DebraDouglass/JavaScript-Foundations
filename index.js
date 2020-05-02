@@ -127,21 +127,52 @@ function mortgageCalculator(principal,interestRate,years,creditScore) {
     else {
         interestRate = interestRate;
     }
-
     let monthlyInterestRate = interestRate / 12;
     let periods = years * 12;
     let numerator = (monthlyInterestRate * Math.pow((1 + monthlyInterestRate),periods));
     let denominator = (Math.pow((1 + monthlyInterestRate),periods) - 1)  
     monthlyRate = principal * (numerator / denominator);
     
-    return `${name}, your monthly rate is ${Math.round((monthlyRate).toFixed(2))}`;
+    return `${name}, your monthly rate is $ ${Math.round((monthlyRate).toFixed(2))}`;
 }
-  mortgageCalculator(200000,0.05,30,660);
+mortgageCalculator(200000,0.05,30,660);
 
    // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except 
-it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. 
-Complete these calculations using a for loop. */
+it should console.log the monthly payment for 10 different interest rates
+at 0.5% increments plus or minus 2% from the inputted interest rate. 
+Complete these calculations using a for loop.*/
+
+let name = "Debra"
+
+    function mortgageCalculator(principal,interestRate,years,creditScore) {
+        if (creditScore > 740) {
+            interestRate = interestRate - .005;
+        }
+        else if (creditScore < 661) {
+            interestRate = interestRate + .005;
+        }
+        else {
+            interestRate = interestRate;
+        }
+
+        function varIntRate(interestRate) {
+            for (let i = 0; i < 10; i++) {
+                let sample = interestRate - .005
+            }
+        let monthlyInterestRate = interestRate / 12;
+        let periods = years * 12;
+        let numerator = (monthlyInterestRate * Math.pow((1 + monthlyInterestRate),periods));
+        let denominator = (Math.pow((1 + monthlyInterestRate),periods) - 1)  
+        monthlyRate = principal * (numerator / denominator);
+        return interestRate;
+        return varIntRate;
+    }
+
+    return `${name}, with an interest rate of ${interestRate}, your monthly rate is ${Math.round((monthlyRate).toFixed(2))}`;
+}
+
+console.log(name + ", with an interest rate of " + (interestRate) + ", your monthly rate is " + monthlyRate.);
 
 /*For example, variableInterestRate(200000, 0.04, 30) should console.log:*/
 
@@ -155,11 +186,6 @@ Complete these calculations using a for loop. */
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-
-function variableInterestRate(P, I, N, C) {
-
-}
-
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
